@@ -1,4 +1,4 @@
-import { SomarParams } from "../interfaces/SomarParameters";
+import { SomarParams } from "../interfaces/QuestaoUmIntarface";
 
 export class SomarParameter implements SomarParams {
     indice: number
