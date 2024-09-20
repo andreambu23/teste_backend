@@ -2,7 +2,7 @@ import { DailyInvoiceInput, DailyInvoiceOutput } from "../interfaces/QuestaoTres
 import { DailyInvoice } from "../models/QuestaoTresModel";
 
 export class QuestaoTresService {
-    async calculateDailyInvoicing(input: DailyInvoiceInput): Promise<DailyInvoiceOutput> {
+    questaoTres = async (input: DailyInvoiceInput): Promise<DailyInvoiceOutput> => {
         try {
             const values: number[] = input.values;
             const filteredValues = values.filter((value: number) => value > 0);
