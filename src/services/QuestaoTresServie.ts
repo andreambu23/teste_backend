@@ -1,9 +1,8 @@
 import { DailyInvoiceInput, DailyInvoiceOutput } from "../interfaces/QuestaoTresInterface";
-import { BadRequestError, NotFoundError } from "../models/ErrorStats";
 import { DailyInvoice } from "../models/QuestaoTresModel";
 
 export class QuestaoTresService {
-    async calculateDailyInvoicing(input: DailyInvoiceInput) {
+    async calculateDailyInvoicing(input: DailyInvoiceInput): Promise<DailyInvoiceOutput> {
         try {
             const values: number[] = input.values;
             const filteredValues = values.filter((value: number) => value > 0);
@@ -22,9 +21,6 @@ export class QuestaoTresService {
 
             return new DailyInvoice(result)
         } catch (error) {
-            if (error instanceof BadRequestError || error instanceof NotFoundError) {
-                return error.statusCode, error.message
-            }
             return {
                 minValue: 0,
                 maxValue: 0,
