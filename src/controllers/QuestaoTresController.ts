@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { QuestaoTresService } from "../services/QuestaoTresServie";
+import { QuestaoTresService } from "../services/QuestaoTresService";
 import { DailyInvoiceInput, DailyInvoiceOutput } from "../interfaces/QuestaoTresInterface";
 import { InternalServerError } from "../models/ErrorStats";
 
